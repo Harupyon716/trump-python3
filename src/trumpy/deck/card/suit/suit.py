@@ -148,12 +148,18 @@ class Suit:
             case _:
                 raise ValueError(f"無効な値{option}を検出しました.\noptionには 'id' または 'i', 'name' または 'n', 'label' または 'l' を指定してください.")
 
-    # def to_dict(self) -> dict:
-    #     return {
-    #         "id" : self.id,
-    #         "name" : self.name,
-    #         "label" : self.label
-    #     }
+    def to_dict(self) -> dict[str , int | str]:
+        """
+        辞書を取得するためのシリアライザ.
+        """
+        return {
+            "id" : self.id,
+            "name" : self.name,
+            "label" : self.label
+        }
     
-    # def to_json(self) -> json:
-    #     return json.dumps(self.to_dict(), ensure_ascii=False)
+    def to_json(self) -> str:
+        """
+        json形式の文字列を取得するシリアライザ
+        """
+        return json.dumps(self.to_dict(), ensure_ascii=False)

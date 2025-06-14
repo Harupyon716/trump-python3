@@ -202,3 +202,13 @@ def test_all():
 
     with pytest.raises(ValueError, match="無効な値valueを検出しました."):
         Suit.all("value")
+
+
+def test_suit_dict():
+    suit = Suit(4)
+    assert suit.to_dict() == {"id": 4, "name": "dia", "label": "♦"}
+
+
+def test_suit_json():
+    suit = Suit(3)
+    assert suit.to_json() == '{"id": 3, "name": "club", "label": "♣"}'
