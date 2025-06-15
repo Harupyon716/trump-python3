@@ -1,4 +1,4 @@
-# test/test_suit.py
+# src/test/test_suit.py
 
 from trumpy import Suit
 
